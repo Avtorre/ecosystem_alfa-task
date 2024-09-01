@@ -1,0 +1,75 @@
+.card {
+  display: flex;
+  height: 450px;
+  overflow: hidden;
+  padding: 10px;
+
+  &__img {
+    height: 50%;
+    display: flex;
+    overflow: hidden;
+
+    &>img{
+      display: flex;
+      align-self: center;
+      transform: scale(0.6, 0.6);
+      -ms-transform: scale(0.6, 0.6);
+      -webkit-transform: scale(0.6, 0.6);
+    }
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    &_title {
+      margin: 0;
+      display: inline-block;
+      height: fit-content;
+      
+
+      &[contentEditable = "false"] {
+        height: 30px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+    }
+
+    &_text {
+      display: -webkit-box;
+      height: 70px;
+      overflow-y: scroll;
+
+      &[contentEditable = "false"] {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        -webkit-line-clamp: 3;
+        line-clamp: 3;
+        -webkit-box-orient: vertical;
+        white-space: break-spaces;  
+      } 
+    }
+  }
+}
+
+.btn {
+  display: flex;
+  justify-content: space-between;
+
+  &__edit {
+    width: 70px;
+  }
+}
+
+.category {
+  display: flex;
+  width: fit-content;
+  font-weight: 300;
+  font-size: .8rem;
+}
+
+.data {
+  display: flex;
+  justify-content: space-between;
+}

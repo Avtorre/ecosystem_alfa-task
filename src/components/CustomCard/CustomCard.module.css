@@ -1,0 +1,70 @@
+.card {
+  display: flex;
+  height: 450px;
+  overflow: hidden;
+  padding: 10px;
+}
+.card__img {
+  height: 50%;
+  display: flex;
+  overflow: hidden;
+}
+.card__img > img {
+  display: flex;
+  align-self: center;
+  transform: scale(0.6, 0.6);
+  -ms-transform: scale(0.6, 0.6);
+  -webkit-transform: scale(0.6, 0.6);
+}
+.card__body {
+  display: flex;
+  flex-direction: column;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+.card__body_title {
+  margin: 0;
+  display: inline-block;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+.card__body_title[contentEditable=false] {
+  height: 30px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.card__body_text {
+  display: -webkit-box;
+  height: 70px;
+  overflow-y: scroll;
+}
+.card__body_text[contentEditable=false] {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+  white-space: break-spaces;
+}
+
+.btn {
+  display: flex;
+  justify-content: space-between;
+}
+.btn__edit {
+  width: 70px;
+}
+
+.category {
+  display: flex;
+  width: -moz-fit-content;
+  width: fit-content;
+  font-weight: 300;
+  font-size: 0.8rem;
+}
+
+.data {
+  display: flex;
+  justify-content: space-between;
+}/*# sourceMappingURL=CustomCard.module.css.map */
