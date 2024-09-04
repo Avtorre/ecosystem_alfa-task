@@ -1,11 +1,13 @@
 import { configureStore } from "@reduxjs/toolkit";
 import productsReducer from "./productsStrore/productsReducer";
+import userReducer from "./userStore/userReducer";
 
 
 //стандартный шаблон инициализации redux'a 
 export const store = configureStore({
     reducer: {
-      products: productsReducer
+      products: productsReducer,
+      user: userReducer
     }
 })
 

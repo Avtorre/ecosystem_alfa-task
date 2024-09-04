@@ -6,26 +6,35 @@ import { setProducts } from '../../store/productsStrore/productsReducer'
 import { RootState } from '../../store/store'
 import { Card } from 'react-bootstrap'
 import CustomCard from '../../components/CustomCard/CustomCard'
+import { Product } from '../../lib/types'
 
 const Main = () => {
   const {fetching} = useFetch()
   const dispatch = useDispatch()
-  const [filter, setFilter] = useState(false)
+  const [filt, setFilt] = useState(false)
+  //const [filter, setFilter] = useState(false)
   const [prod, setProd] = useState([{}])
-  let products = useSelector((state: RootState) => state.products)
+  const products = useSelector((state: RootState) => state.products)
+  const user = useSelector((state: RootState) => state.user)
+  const [filtered, setFiltered] = useState<Product[]>()
 
   const fetch = async () => {
     await fetching().then(data => dispatch(setProducts(data)))
   }
 
   const filterr = () => {
-    return products = products.filter((p) => p.favourite === true)
-    setFilter(!filter)
-    console.log('products', products)
+    console.log('user.favourite', user.favourite)
+    setFilt(true)
+    setFiltered(products.filter((p) => user.favourite.includes(p.id)))
+    //setFilter(!filter)
+    console.log('products', filtered)
   }
 
   useEffect(() => {
     fetch()
+    if(filt) {
+      filterr()
+    }
   }, [])
 
   //console.log('products', products)
@@ -35,11 +44,21 @@ const Main = () => {
         <button onClick={() =>filterr()}>fav</button>
       </div>
       <div className={classes.main__content}>
-        {products && products.map((item: any) => {
-            return(
-              <CustomCard key={item.id} item={item} />
-            )
-          })
+        {products &&
+          <>
+            {filtered
+              ? filtered.map((item: any) => {
+                return(
+                  <CustomCard key={item.id} item={item} />
+                )
+              })
+              : products.map((item: any) => {
+                return(
+                  <CustomCard key={item.id} item={item} />
+                )
+              })
+            }
+          </>
         }
       </div>
     </div>
@@ -47,3 +66,8 @@ const Main = () => {
 }
 
 export default Main
+/*products.map((item: any) => {
+            return(
+              <CustomCard key={item.id} item={item} />
+            )
+          }) */
