@@ -32,7 +32,9 @@ const Product = () => {
 
   return (
     <div>
-      <Button onClick={() => handleBack()}>&#60; Back</Button>
+      <Button onClick={() => handleBack()} className={classes.btn__back}>
+        &#60; Back
+      </Button>
       <div className={classes.product_info}>
         <img
           src={product.image}
