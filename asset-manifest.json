@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/ecosystem_alfa-task/static/css/main.20c214c7.css",
+    "main.js": "/ecosystem_alfa-task/static/js/main.9b781438.js",
+    "index.html": "/ecosystem_alfa-task/index.html",
+    "main.20c214c7.css.map": "/ecosystem_alfa-task/static/css/main.20c214c7.css.map",
+    "main.9b781438.js.map": "/ecosystem_alfa-task/static/js/main.9b781438.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.20c214c7.css",
+    "static/js/main.9b781438.js"
+  ]
+}
