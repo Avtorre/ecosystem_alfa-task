@@ -52,8 +52,8 @@
   display: flex;
   justify-content: space-between;
 }
-.btn__edit {
-  width: 70px;
+.btn__svg {
+  cursor: pointer;
 }
 
 .category {

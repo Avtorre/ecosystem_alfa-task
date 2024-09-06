@@ -8,16 +8,19 @@ const initialState:User = {
 }
 
 
-const repoSlice = createSlice({
+const userSlice = createSlice({
     name:'user', 
     initialState,
     reducers: {
       addFavourite: (state, action: {payload: number}) => {
         return state = {...state, favourite: [...state.favourite, action.payload]}
-      }
+      }, 
+      removeFavourite: (state, action: {payload: number}) => {
+        return state = {...state, favourite: state.favourite.filter((i) => i !== action.payload)}
+      }, 
     }
 })
 
-export const {addFavourite} = repoSlice.actions
+export const {addFavourite, removeFavourite} = userSlice.actions
 
-export default repoSlice.reducer
+export default userSlice.reducer

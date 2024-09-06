@@ -1,27 +1,40 @@
-import { createSlice } from "@reduxjs/toolkit"
-import { Product } from "../../lib/types"
+import { createSlice } from "@reduxjs/toolkit";
+import { Product } from "../../lib/types";
 
+const initialState: Product[] = [];
 
-//задаём тип данных и начальное значение
-const initialState:Product[] = []
-
-//слайс, в котором хранятся результаты поиска и флаг загрузки
-const repoSlice = createSlice({
-    name:'products', 
-    initialState,
-    reducers: {
-      setProducts: (state, action: {payload: Product[]}) => {
-        return state = action.payload
-      },
-      editProduct: (state, action: {payload: Product}) => {
-        return state.map((i) => i.id !== action.payload.id ? i : action.payload)  
-      },
-      deleteProduct: (state, action: {payload: Product}) => {
-        return state.filter((i) => i.id !== action.payload.id)  
-      }
+const checkIndex = (s: Product[]) => {
+  let id = 0;
+  s.map((p) => {
+    if (p.id > id) {
+      id = p.id;
     }
-})
+  });
+  return id + 1;
+};
 
-export const {setProducts, editProduct, deleteProduct} = repoSlice.actions
+const productsSlice = createSlice({
+  name: "products",
+  initialState,
+  reducers: {
+    setProducts: (state, action: { payload: Product[] }) => {
+      return (state = action.payload);
+    },
+    editProduct: (state, action: { payload: Product }) => {
+      return state.map((i) =>
+        i.id !== action.payload.id ? i : action.payload
+      );
+    },
+    deleteProduct: (state, action: { payload: Product }) => {
+      return state.filter((i) => i.id !== action.payload.id);
+    },
+    addProduct: (state, action: { payload: Product }) => {
+      return (state = [...state, { ...action.payload, id: checkIndex(state) }]);
+    },
+  },
+});
 
-export default repoSlice.reducer
+export const { setProducts, editProduct, deleteProduct, addProduct } =
+  productsSlice.actions;
+
+export default productsSlice.reducer;
