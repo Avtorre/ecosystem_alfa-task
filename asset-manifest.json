@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/ecosystem_alfa-task/static/css/main.6404694b.css",
-    "main.js": "/ecosystem_alfa-task/static/js/main.d0771899.js",
+    "main.js": "/ecosystem_alfa-task/static/js/main.929c536d.js",
     "index.html": "/ecosystem_alfa-task/index.html",
     "main.6404694b.css.map": "/ecosystem_alfa-task/static/css/main.6404694b.css.map",
-    "main.d0771899.js.map": "/ecosystem_alfa-task/static/js/main.d0771899.js.map"
+    "main.929c536d.js.map": "/ecosystem_alfa-task/static/js/main.929c536d.js.map"
   },
   "entrypoints": [
     "static/css/main.6404694b.css",
-    "static/js/main.d0771899.js"
+    "static/js/main.929c536d.js"
   ]
 }
