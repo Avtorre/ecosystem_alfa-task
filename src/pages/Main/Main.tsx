@@ -48,7 +48,10 @@ const Main = () => {
     setCategoryFilter(true);
     searchQuery
       ? setFiltered(searchResults?.filter((p) => p.category === category))
-      : await fetchByCategory(category).then((data) => setFiltered(data));
+      : await fetchByCategory(category).then((data) => {
+          setFiltered(data);
+          setTotal(data.length);
+        });
     filtered?.length && setTotal(filtered.length);
   };
 
