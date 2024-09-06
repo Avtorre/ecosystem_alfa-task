@@ -9,7 +9,10 @@ const Header = () => {
   return (
     <Navbar bg="dark" data-bs-theme="dark">
       <Container>
-        <Navbar.Brand href="#" onClick={() => navigate("/products")}>
+        <Navbar.Brand
+          style={{ cursor: "pointer" }}
+          onClick={() => navigate("/products")}
+        >
           Store
         </Navbar.Brand>
         <Nav>
