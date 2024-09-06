@@ -86,7 +86,12 @@ const Main = () => {
           <Dropdown>
             <Dropdown.Toggle variant="">Category filter</Dropdown.Toggle>
             <Dropdown.Menu>
-              <Dropdown.Item onClick={() => setCategoryFilter(false)}>
+              <Dropdown.Item
+                onClick={() => {
+                  setCategoryFilter(false);
+                  setTotal(products.length);
+                }}
+              >
                 All
               </Dropdown.Item>
               {categories.map((c, i) => {

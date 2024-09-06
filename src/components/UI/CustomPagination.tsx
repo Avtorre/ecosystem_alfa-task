@@ -27,6 +27,7 @@ const CustomPagination = (props: {
     );
   }
 
+  props.page > items.length && props.setPage(1);
   useEffect(() => {}, [props]);
 
   return (
